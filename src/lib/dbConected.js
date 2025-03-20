@@ -1,6 +1,7 @@
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const { abortOnSynchronousPlatformIOAccess } = require('next/dist/server/app-render/dynamic-rendering');
+import { MongoClient, ServerApiVersion }  from  'mongodb';
+
+
 const uri = process.env.MONGODB_URI;
 function dbConnect(collectionName) {
     // Create a MongoClient with a MongoClientOptions object to set the Stable API version
