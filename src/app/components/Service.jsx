@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import dbConnect from "@/lib/dbConected";
+import dbConnect, { collectionsObj } from "@/lib/dbConected";
+import Link from "next/link";
 
 export default async function Service() {
   // Connect to the "services" collection
-  const servicesCollection = await dbConnect("services");
+  const servicesCollection = await dbConnect(collectionsObj.servicesCollection);
   const data = await servicesCollection.find({}).toArray();
 
   return (
@@ -34,9 +35,10 @@ export default async function Service() {
             <p className="text-lg font-bold text-blue-600 mt-2">${item.price}</p>
 
             {/* Button */}
-            <button className="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">
+            <Link href={`/services/${item._id}`}>
+            <button className="mt-4 px-4 py-2 cursor-pointer bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">
               View Details
-            </button>
+            </button></Link>
           </div>
         ))}
       </div>
