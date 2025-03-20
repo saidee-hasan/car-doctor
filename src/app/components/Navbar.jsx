@@ -168,7 +168,7 @@ function Navbar() {
             <div className="flex items-center">
               <Link
                 href="/appointment"
-                className="btn btn-primary text-white hover:bg-primary-focus transition-all hover:scale-105 shadow-lg hover:shadow-primary/30"
+                className="btn bg-amber-600 text-white  transition-all hover:scale-105 shadow-lg hover:shadow-primary/30"
               >
                 Book Appointment
               </Link>
