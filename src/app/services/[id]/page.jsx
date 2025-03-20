@@ -19,8 +19,8 @@ export default async function Page({ params }) {
   return (
     <div className="container mx-auto px-4 py-10 mt-10">
       <div className="bg-white rounded-lg shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Service Image with Hover Effect */}
-        <div className="relative w-full h-full group overflow-hidden">
+        {/* Responsive Service Image with Hover Effect */}
+        <div className="relative w-full h-64 md:h-auto group overflow-hidden">
           <Image
             src={service.img}
             alt={service.title}

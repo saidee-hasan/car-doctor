@@ -13,11 +13,11 @@ export default async function Service() {
       <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
 
       {/* Responsive Grid */}
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid gap-1 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4">
         {data.map((item, idx) => (
           <div
             key={idx}
-            className="bg-white shadow-md rounded-lg overflow-hidden p-4"
+            className="bg-white shadow-md rounded-lg overflow-hidden p-1"
           >
             {/* Image */}
             <div className="relative w-full h-48">

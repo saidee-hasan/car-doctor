@@ -165,7 +165,7 @@ function Navbar() {
             </div>
 
             {/* Navbar End */}
-            <div className="flex items-center">
+            <div className="flex hidden md:block items-center">
               <Link
                 href="/appointment"
                 className="btn bg-amber-600 text-white  transition-all hover:scale-105 shadow-lg hover:shadow-primary/30"
