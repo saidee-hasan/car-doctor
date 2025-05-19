@@ -1,9 +1,13 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { useSession, signIn, signOut } from "next-auth/react"
 import Logo from "../../../public/assets/images/login/login.svg";
 
+
+
 export default function Login() {
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -16,7 +20,7 @@ export default function Login() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
 
     // Basic form validation
@@ -24,13 +28,27 @@ export default function Login() {
       setError('Both fields are required');
       return;
     }
+    try {
+      await signIn('credentials', {
+        ...formData,
+        redirect: true, 
+        callbackUrl: '/'
+      });
+      
 
+
+      // Reset the form after submission
+      setFormData({ email: '', password: '' });
+      setError(null);
+      
+    } catch (error) {
+      
     // Submit the form (e.g., to an API or backend)
-    console.log('Form submitted:', formData);
+    console.log('Authaungation Faild:');
+      
+    }
 
-    // Reset the form after submission
-    setFormData({ email: '', password: '' });
-    setError(null);
+   
   };
 
   return (

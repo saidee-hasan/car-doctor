@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Logo from "../../../public/assets/images/login/login.svg";
+import registerUser from '../actions/auth/registerUser';
 
 export default function Register() {
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ export default function Register() {
     }
 
     // Submit the form (e.g., to an API or backend)
-    console.log('Form submitted:', formData);
+    registerUser( formData);
 
     // Reset the form after submission
     setFormData({ username: '', email: '', password: '' });
